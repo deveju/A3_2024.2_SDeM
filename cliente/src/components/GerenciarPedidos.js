@@ -92,7 +92,7 @@ function GerenciarPedidos() {
 
     return (
         <div>
-            <h2 id="gerpedidostitle">Gerenciar Pedidos</h2>
+            <h2 id="gerpedidostitle">Adicionar Pedido</h2>
 
             <select onChange={(e) => setClienteSelecionado(e.target.value)} className="firstinput selectlarger" value={clienteSelecionado || ''}>
                 <option value="">Selecione um cliente</option>
@@ -121,7 +121,7 @@ function GerenciarPedidos() {
             />
             <button onClick={adicionarProduto} className="buttons">Adicionar Produto</button>
 
-            <h3>Itens no Pedido</h3>
+            <h3>Itens no Pedido:</h3>
             <ul id="listpedidosscroll">
                 {itensPedido.map((item, index) => (
                     <li key={index}>
@@ -132,9 +132,9 @@ function GerenciarPedidos() {
 
             <button onClick={fecharPedido} className="buttons">Fechar Pedido</button>
 
-            <h3>Remover Pedido</h3>
+            <h2>Excluir Pedido</h2>
             <select onChange={(e) => setPedidoSelecionado(e.target.value)} className="firstinput selectlarger" value={pedidoSelecionado || ''}>
-                <option value="">Selecione um pedido para remover⠀</option>
+                <option value="">Selecione um pedido para excluir⠀</option>
                 {pedidos.map(pedido => (
                     <option key={pedido.pedido_id} value={pedido.pedido_id}>{`Pedido ${pedido.pedido_id} - Cliente ${pedido.cliente_nome} - R$ ${pedido.total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}</option>
                 ))}
