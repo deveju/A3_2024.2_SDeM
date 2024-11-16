@@ -57,7 +57,7 @@ function ClientesManager() {
 
     return (
         <div>
-            <h2 id="gerclientestitle">Gerenciar Clientes</h2>
+            <h2 id="gerclientestitle">Adicionar Cliente</h2>
             <input
                 type="text"
                 placeholder="Nome"
@@ -74,7 +74,7 @@ function ClientesManager() {
             />
             <button onClick={handleAddCliente} className="buttons">Adicionar Cliente</button>
 
-            <h3>Remover Cliente</h3>
+            <h2>Remover Cliente</h2>
             <select onChange={(e) => setClienteId(e.target.value)}className="firstinput selectlarger" value={clienteId || ''}>
                 <option value="">Selecione um cliente para remover</option>
                 {clientes.map(cliente => (
@@ -83,7 +83,7 @@ function ClientesManager() {
             </select>
             <button onClick={handleDeleteCliente} className="buttons">Remover Cliente</button>
 
-            <h3>Editar Cliente</h3>
+            <h2>Editar Cliente</h2>
             <select onChange={(e) => setClienteId(e.target.value)} className="firstinput selectlarger" value={clienteId || ''}>
                 <option value="">Selecione um cliente para editar</option>
                 {clientes.map(cliente => (
