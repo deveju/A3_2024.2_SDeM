@@ -35,9 +35,9 @@ function DashboardProdutos() {
         <div>
             <h2 class="titleprodutos">Produtos</h2>
             <input
-                className="filterinput"
+                className="filterinput halflarger"
                 type="text"
-                placeholder="Filtrar"
+                placeholder="Filtrar produto pelo nome"
                 value={produtoFilter}
                 onChange={(e) => setProdutoFilter(e.target.value)}
             />
@@ -45,15 +45,15 @@ function DashboardProdutos() {
                 <ul className="goright">
                     {filtroProdutos.map(produto => (
                         <li key={produto.id} className="clientesObj liitens">
-                        <span className="produto-id" style={{ color: "#000" }}>[ID {produto.id}]</span>
-                        <span className="produto-nome" style={{ color: "#353535" }}>{produto.nome}</span>
-                        <span className="produto-preco" style={{ color: "#000" }}> R$ {parseFloat(produto.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                        <span className="produto-id">[ID {produto.id}]</span>
+                        <span className="produto-nome">{produto.nome}</span>
+                        <span className="produto-preco"> R$ {parseFloat(produto.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                             {produto.vendedor ? (
-                                <span className="produto-vendedor" style={{ color: "#0b0" }}>
+                                <span className="produto-vendedor comvendedor">
                                     {` Vendedor: ${produto.vendedor.nome}`}
                                 </span>
                             ) : (
-                                <span className="produto-vendedor" style={{ color: "#b00" }}>
+                                <span className="produto-vendedor semvendedor">
                                     Vendedor não disponível
                                 </span>
                             )}
