@@ -35,9 +35,9 @@ function Pedidos() {
         <div>
             <h2 class="titlepedidos">Pedidos</h2>
             <input
-                className="filterinput"
+                className="filterinput halflarger"
                 type="text"
-                placeholder="Filtrar por Cliente"
+                placeholder="Filtrar pedido pelo cliente"
                 value={clienteFilter}
                 onChange={(e) => setClienteFilter(e.target.value)}
             />
@@ -53,24 +53,24 @@ function Pedidos() {
                         <li key={pedido.pedido_id} className="pedidosObj liitens">
                             <details>
                                 <summary className="summaryPedido">
-                                    <span className="pedido-id" style={{ color: "#000" }}>
+                                    <span className="pedido-id">
                                         {[`Pedido [ID ${pedido.pedido_id}]`]}:
                                     </span>
-                                    <span className="pedido-cliente" style={{ color: "#353535" }}>
+                                    <span className="pedido-cliente">
                                         {`${pedido.cliente_nome} [ID ${pedido.cliente_id}]` || "Cliente não encontrado"}
                                     </span>
                                     <br />
-                                    <span className="pedido-data-title" style={{ color: "#000" }}>
+                                    <span className="pedido-data-title">
                                         {"     Data do Pedido:"}
                                     </span>
-                                    <span className="pedido-data" style={{ color: "#353535" }}>
+                                    <span className="pedido-data">
                                         {new Date(pedido.pedido_data).toLocaleDateString() || "Data inválida"}
                                     </span>
                                     <br />
-                                    <span className="pedido-total-title" style={{ color: "#000" }}>
+                                    <span className="pedido-total-title">
                                         {"     Total do Pedido:"}
                                     </span>
-                                    <span className="pedido-total" style={{ color: "#353535" }}>
+                                    <span className="pedido-total">
                                         {pedido.total ? 
                                             `R$ ${pedido.total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` 
                                             : "R$ 0,00"}
@@ -78,9 +78,9 @@ function Pedidos() {
                                 </summary>
 
                                 <input
-                                    className="filterinput filterprod"
+                                    className="filterinput filterprod halflarger"
                                     type="text"
-                                    placeholder="Filtrar Produtos"
+                                    placeholder="Filtrar produtos pelo nome"
                                     value={produtoFilters[pedido.pedido_id] || ''}
                                     onChange={(e) => handleProdutoFilterChange(pedido.pedido_id, e.target.value)}
                                 />
@@ -93,31 +93,31 @@ function Pedidos() {
                                             )
                                             .map(item => (
                                                 <li key={item.produto_nome} className="pedidosObj pedidosObj2">
-                                                    <span className="produto-id" style={{ color: "#505050" }}>
+                                                    <span className="produto-id">
                                                         ID {item.produto_id}
                                                     </span>
 
-                                                    <span style={{ color: "#000" }}>|</span>
+                                                    <span class="span-divider">|</span>
 
-                                                    <span className="produto-nome" style={{ color: "#505050" }}>
+                                                    <span className="produto-nome">
                                                         {item.produto_nome}
                                                     </span>
 
-                                                    <span style={{ color: "#000" }}>|</span>
+                                                    <span class="span-divider">|</span>
 
-                                                    <span className="produto-quantidade" style={{ color: "#000" }}>
+                                                    <span className="produto-quantidade">
                                                         {`Qtd: ${item.quantidade}`}
                                                     </span>
 
-                                                    <span style={{ color: "#000" }}>|</span>
+                                                    <span class="span-divider">|</span>
 
-                                                    <span className="produto-preco" style={{ color: "#000" }}>
+                                                    <span className="produto-preco">
                                                         {item.preco ? 
                                                             `R$ ${parseFloat(item.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` 
                                                             : "R$ 0,00"}
                                                     </span>
 
-                                                    <span className="produto-total" style={{ color: "#000" }}>
+                                                    <span className="produto-total">
                                                         {item.total ? 
                                                             `➤  R$ ${item.total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` 
                                                             : "Total: R$ 0,00"}
