@@ -84,6 +84,8 @@ function Home() {
             {activeTab === 'pedidosmanager' && <PedidosManager />}
             {activeTab === 'dashboardvendedores' && <DashboardVendedores />}
             {activeTab === 'vendedoresmanager' && <VendedoresManager />}
+
+            <p id="bottom-text">© 2024 - 2024 www.a3ferramentas.com.br - All Rights Reserved.</p>
         </div>
     );
 }
