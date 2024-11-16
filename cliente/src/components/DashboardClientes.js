@@ -20,9 +20,9 @@ function DashboardClientes() {
         <div>
             <h2 class="titleclientes">Clientes</h2>
             <input
-                class="filterinput"
+                class="filterinput halflarger"
                 type="text"
-                placeholder="Filtrar"
+                placeholder="Filtrar cliente pelo nome"
                 value={clienteFilter}
                 onChange={(e) => setClienteFilter(e.target.value)}
             />
