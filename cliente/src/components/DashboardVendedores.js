@@ -28,9 +28,9 @@ function DashboardVendedores() {
         <div>
             <h2 class="titlevendedores">Vendedores</h2>
             <input
-                className="filterinput"
+                className="filterinput halflarger"
                 type="text"
-                placeholder="Filtrar Vendedores"
+                placeholder="Filtrar vendedores pelo nome"
                 value={vendedorFilter}
                 onChange={(e) => setVendedorFilter(e.target.value)}
             />
@@ -40,17 +40,17 @@ function DashboardVendedores() {
                         <li key={vendedor.id} className="vendedoresObj liitens">
                             <details>
                                 <summary className="summaryVendedor">
-                                    <span className="vendedor-id" style={{ color: "#000" }}>{`[ID ${vendedor.id}]:`}</span>
-                                    <span className="vendedor-nome" style={{ color: "#353535" }}>{`${vendedor.nome}`}</span>
+                                    <span className="vendedor-id">{`[ID ${vendedor.id}]:`}</span>
+                                    <span className="vendedor-nome">{`${vendedor.nome}`}</span>
                                     <br></br>
-                                    <span className="vendedor-email-title" style={{ color: "#000" }}>{`     [EMAIL]:`}</span>
-                                    <span className="vendedor-email" style={{ color: "#353535" }}>{`${vendedor.email}`}</span>
+                                    <span className="vendedor-email-title">{`     [EMAIL]:`}</span>
+                                    <span className="vendedor-email">{`${vendedor.email}`}</span>
                                 </summary>
 
                                 <input
-                                    className="filterinput filterprod"
+                                    className="filterinput filterprod halflarger"
                                     type="text"
-                                    placeholder="Filtrar Produtos"
+                                    placeholder="Filtrar produtos pelo nome"
                                     value={produtoFilters[vendedor.id] || ''}
                                     onChange={(e) => handleProdutoFilterChange(vendedor.id, e.target.value)}
                                 />
@@ -63,9 +63,9 @@ function DashboardVendedores() {
                                         )
                                         .map(produto => (
                                             <li key={produto.id} className="vendedoresObj vendedoresObj2">
-                                            <span className="produto-id" style={{ color: "#000" }}>[P.ID {produto.id}]</span>
-                                            <span className="produto-nome" style={{ color: "#505050" }}>{produto.nome}</span>
-                                            <span className="produto-preco" style={{ color: "#000" }}>R$ {parseFloat(produto.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                                            <span className="produto-id">[P.ID {produto.id}]</span>
+                                            <span className="produto-nome">{produto.nome}</span>
+                                            <span className="produto-preco">R$ {parseFloat(produto.preco).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                                             </li>
                                         ))
                                     ) : (
