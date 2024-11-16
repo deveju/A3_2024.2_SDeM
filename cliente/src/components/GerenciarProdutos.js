@@ -77,9 +77,9 @@ function ProdutosManager() {
             />
             <button onClick={handleAddProduto} class="buttons">Adicionar Produto</button>
 
-            <h3>Remover Produto</h3>
+            <h2>Excluir Produto</h2>
             <select onChange={(e) => setProdutoId(e.target.value)} value={produtoId} className="selectproduto selectlarger">
-                <option value="">Selecione um produto para remover</option>
+                <option value="">Selecione um produto para excluir</option>
                 {produtos.map((produto) => (
                     <option key={produto.id} value={produto.id}>
                         {produto.nome}
@@ -88,7 +88,7 @@ function ProdutosManager() {
             </select>
             <button onClick={handleDeleteProduto} className="buttons">Remover Produto</button>
 
-            <h3>Editar Produto</h3>
+            <h2>Editar Produto</h2>
             <select onChange={(e) => setProdutoId(e.target.value)} value={produtoId} className="selectproduto selectlarger">
                 <option value="">Selecione um produto para editar</option>
                 {produtos.map((produto) => (
